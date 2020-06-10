@@ -1,5 +1,8 @@
 # termometr_app-extension
 Termometr app which can also be used as Chrome extension. Measure temperature from four different places in Wrocław.
+Using that API:
+https://www.wroclaw.pl/open-data/dataset/warunkipogodowebiezacyodczyt_data/resource/9d5b2336-6f9a-4fa0-8cbe-d6b4776194c3
+
 
 # Termometr
 How to install:
