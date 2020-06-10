@@ -1,0 +1,50 @@
+.card-title{
+    padding-bottom: 20px;
+}
+
+.card-background{
+    background: rgb(255, 255, 255);
+}
+
+.border-card{
+    // border: solid rgb(172, 172, 172) 3px;
+    // box-shadow: 10px 10px 17px 0px rgba(0,0,0,0.75);
+}
+
+.image-box{
+    position: relative;
+    
+}
+
+.localisation{
+    float: left;
+}
+
+.temperature{
+    position: absolute;
+    top: -10px;
+    font-size: 4rem;
+    color: rgb(0, 0, 0);
+}
+
+.image{
+    border: solid rgb(202, 201, 201) 2px;
+}
+
+#rain{
+    font-size: 1rem;
+}
+
+#localisation-text{
+    font-size: 0.7rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#time-text{
+    font-size: 0.7rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
