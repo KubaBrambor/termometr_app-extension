@@ -1,6 +1,6 @@
 <div class="card border-card" style="width: 100%;">
     <div class="image-box">
-        <img class="card-img-top image" [src]="logo" alt="Card image cap">
+        <img class="card-img-top image" src="assets/logo.jpg" alt="Card image cap">
         <p class="card-text temperature h1">{{temperature}}°C</p>
     </div>
     <div class="card-body card-background">
@@ -40,5 +40,5 @@
       <option>Wybierz lokalizacje</option>
       <option *ngFor="let localisation of localArr" [value]="localisation._id">{{localisation.Lokalizacja_Opis}}</option>
     </select>
-    
+
 </div>
