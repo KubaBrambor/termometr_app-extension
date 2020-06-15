@@ -24,6 +24,8 @@ export class CardComponent implements OnInit {
   public indexFound = false;
   public buttonMessage = false;
   public buttonDisable = false;
+  public setDefaultLoc = 'false';
+  public setDefaultLocStorage;
 
   constructor(private http: HttpService) {
    }
@@ -37,15 +39,12 @@ export class CardComponent implements OnInit {
         for(let i=0; i<data.body.result.records.length; i++){
           this.localArr.push(data.body.result.records[i])
           console.log(this.localArr[i])
-          if(this.localArr[i]._id == localStorage.getItem(this.indexDataStorage)){
-            this.indexFound = true;
-          }
         }
         /* Delete record from Widawska and Gądowianka street, since it wasn't updated for long time */
         this.localArr.splice(0,2);
         console.log(this.localArr)
 
-        if(this.indexFound){
+        if(localStorage.getItem(this.indexDataStorage)){
           this.buttonDisable = true;
 
           this.temperature = this.localArr[localStorage.getItem(this.indexDataStorage)].T_Powietrza;
@@ -69,6 +68,8 @@ export class CardComponent implements OnInit {
           this.windDirection = this.localArr[localStorage.getItem(this.indexDataStorage)].Wiatr_Kierunek;
           console.log(this.windDirection);
         } else {
+          this.buttonDisable = false;;
+          
           this.temperature = this.localArr[0].T_Powietrza;
           console.log(this.temperature);
 
@@ -90,7 +91,7 @@ export class CardComponent implements OnInit {
           this.windDirection = this.localArr[0].Wiatr_Kierunek;
           console.log(this.windDirection);
 
-          this.buttonDisable = false;
+          this.indexData = 0;
         }
       } else {
         console.error('Server response code: ' + data.status)
@@ -155,9 +156,11 @@ export class CardComponent implements OnInit {
     })
   }
 
-  setAsDefault(event){
+  setAsDefault(event) {
+      this.setDefaultLoc = 'true';
       localStorage.setItem(this.indexDataStorage, this.indexData);
-      console.log(localStorage.getItem(this.indexDataStorage));
+      console.log('index number' + localStorage.getItem(this.indexDataStorage));
+      localStorage.setItem(this.setDefaultLoc, this.setDefaultLocStorage)
       this.buttonMessage = !this.buttonMessage;
       setTimeout(() => {
         this.buttonMessage = !this.buttonMessage;
