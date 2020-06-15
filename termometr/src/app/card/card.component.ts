@@ -24,8 +24,6 @@ export class CardComponent implements OnInit {
   public indexFound = false;
   public buttonMessage = false;
   public buttonDisable = false;
-  public setDefaultLoc = 'false';
-  public setDefaultLocStorage;
 
   constructor(private http: HttpService) {
    }
@@ -158,10 +156,8 @@ export class CardComponent implements OnInit {
   }
 
   setAsDefault(event) {
-      this.setDefaultLoc = 'true';
       localStorage.setItem(this.indexDataStorage, this.indexData);
       console.log('index number' + localStorage.getItem(this.indexDataStorage));
-      localStorage.setItem(this.setDefaultLoc, this.setDefaultLocStorage)
       this.buttonMessage = !this.buttonMessage;
       setTimeout(() => {
         this.buttonMessage = !this.buttonMessage;
