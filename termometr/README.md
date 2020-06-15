@@ -3,7 +3,7 @@ How to install:
 1. Download project folder.
 2. If there is no "dist" folder, run command ng build . Dist folder will appear in application folder.
 3. Open Extensions Tab in Chrome browser and click Load Extension.
-4. Load folder termometr from dist/termometr. 
+4. Load folder termometr from termometr/dist/termometr. 
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.4.
