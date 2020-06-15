@@ -91,6 +91,7 @@ export class CardComponent implements OnInit {
           this.windDirection = this.localArr[0].Wiatr_Kierunek;
           console.log(this.windDirection);
 
+          // Setting default index in case user would like to add default localisation as his favourite
           this.indexData = 0;
         }
       } else {
